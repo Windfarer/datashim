@@ -47,7 +47,7 @@ func (s3fs *s3fsMounter) Mount(source string, target string) error {
 		"-o", fmt.Sprintf("url=%s", s3fs.url),
 		"-o", fmt.Sprintf("endpoint=%s", s3fs.region),
 		"-o", "allow_other",
-		"-o", "umask=0000",
+		"-o", "umask=022",
 	}
 	if(s3fs.readonly) {
 		args = append(args, "-o","ro")
